@@ -1,13 +1,13 @@
-FROM pytorch/pytorch:1.9.1-cuda11.1-cudnn8-runtime
+# Use the latest Jupyter Scipy notebook image from quay.io
+FROM quay.io/jupyter/scipy-notebook:latest
 
-LABEL author="Gus Hahn-Powell"
-LABEL description="Default container definition for class competition."
+LABEL author="Sumi Lee"
+LABEL description="Modified container definition for class competition."
 
 # Create app directory
 WORKDIR /app
 
-RUN pip install -U pytorch-lightning \
-    graphviz==0.16 \
+RUN pip install -U graphviz==0.16 \
     "ipython>=7.20.0,<8" \
     notebook==6.4.6 \
     jupyter-client==7.1.2 \
